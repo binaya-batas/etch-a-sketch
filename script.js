@@ -1,7 +1,17 @@
 const container = document.querySelector('.container');
 const colorCode = document.querySelector('.color-code');
+const eraserBtn = document.querySelector('.btn-eraser');
+const clearBtn = document.querySelector('.btn-clear')
+let eraser = false;
 
-console.log(colorCode.value);
+eraserBtn.addEventListener('click', function() {
+    console.log(!eraser);
+    eraser = !eraser;
+})
+
+clearBtn.addEventListener('click', function() {
+    location.reload();
+})
 
 function createCanvas(canvasSize) {
     const size = canvasSize*canvasSize;
@@ -14,7 +24,13 @@ function createCanvas(canvasSize) {
         box.addEventListener('mousedown', function() {
             console.log("box-clicked.");
             // box.classList.add('box-color');
-            box.style.backgroundColor = colorCode.value;
+            if (eraser) {
+                // eraserBtn.style.color = "green";
+                box.style.backgroundColor = "rgb(223, 223, 223)";
+            } else {
+
+                box.style.backgroundColor = colorCode.value;
+            }
         })
     }
 }
