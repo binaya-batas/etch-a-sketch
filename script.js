@@ -7,11 +7,17 @@ let eraser = false;
 eraserBtn.addEventListener('click', function() {
     console.log(!eraser);
     eraser = !eraser;
+    if (eraser) {
+        eraserBtn.classList.add('eraser-true');
+    } else {
+        eraserBtn.classList.remove('eraser-true');
+    }
 })
 
 clearBtn.addEventListener('click', function() {
     location.reload();
 })
+
 
 function createCanvas(canvasSize) {
     const size = canvasSize*canvasSize;
@@ -25,10 +31,8 @@ function createCanvas(canvasSize) {
             console.log("box-clicked.");
             // box.classList.add('box-color');
             if (eraser) {
-                // eraserBtn.style.color = "green";
                 box.style.backgroundColor = "rgb(223, 223, 223)";
             } else {
-
                 box.style.backgroundColor = colorCode.value;
             }
         })
