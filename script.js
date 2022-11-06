@@ -40,10 +40,3 @@ function createCanvas(canvasSize) {
 }
 
 createCanvas(16);
-
-// function takeScreenshot() {
-//     html2canvas(container).then((canvas) => {
-//         const base64image = canvas.toDataURL("image/png");
-//         window.location.href = base64image;
-//     })
-// }

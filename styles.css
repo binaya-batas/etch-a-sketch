@@ -6,6 +6,10 @@ h1 {
   text-align: center;
 }
 
+body {
+  min-width: 500px;
+}
+
 .outer-container {
   display: flex;
   gap: 30px;
